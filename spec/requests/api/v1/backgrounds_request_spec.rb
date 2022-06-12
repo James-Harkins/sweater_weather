@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "backgrounds request" do
   describe "GET background for some location" do
-    it "returns a json response with details for some image for the requested location" do
+    it "returns a json response with details for some image for the requested location", :vcr do
       headers = {"CONTENT_TYPE" => "application/json"}
       get "/api/v1/backgrounds", headers: headers, params: {location: "denver,co"}
 
