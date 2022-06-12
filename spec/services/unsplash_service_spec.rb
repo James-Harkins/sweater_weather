@@ -10,7 +10,7 @@ describe UnsplashService do
         expect(denver_background_data[:id]).to be_a String
         expect(denver_background_data[:created_at]).to be_a String
         expect(denver_background_data[:updated_at]).to be_a String
-        expect(denver_background_data[:colors]).to be_a String
+        expect(denver_background_data[:color]).to be_a String
         expect(denver_background_data[:description]).to be_a String
         expect(denver_background_data[:urls]).to be_a Hash
         expect(denver_background_data[:links]).to be_a Hash
