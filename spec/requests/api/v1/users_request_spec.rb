@@ -8,10 +8,9 @@ describe "users request" do
         password: "test123",
         password_confirmation: "test123"
       }
+      headers = {"CONTENT_TYPE" => "application/json"}
 
-      headers = {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
-
-      post "/api/v1/users", json_payload.to_json, headers: headers
+      post "/api/v1/users", headers: headers, params: json_payload.to_json, as: :json
 
       expect(response).to have_http_status(201)
 
@@ -36,10 +35,9 @@ describe "users request" do
         password: "test123",
         password_confirmation: "test123"
       }
+      headers = {"CONTENT_TYPE" => "application/json"}
 
-      headers = {"CONTENT_TYPE" => "application/json", "ACCEPT" => "application/json"}
-
-      post "/api/v1/users", json_payload.to_json, headers: headers
+      post "/api/v1/users", headers: headers, params: json_payload.to_json, as: :json
 
       expect(response).to have_http_status(201)
 
