@@ -21,6 +21,13 @@ describe "forecast request" do
       expect(forecast[:attributes][:current_weather][:visibility]).to be_an Integer
       expect(forecast[:attributes][:current_weather][:conditions]).to be_a String
       expect(forecast[:attributes][:current_weather][:icon]).to be_a String
+      expect(forecast[:attributes][:current_weather]).not_to have_key(:pressure)
+      expect(forecast[:attributes][:current_weather]).not_to have_key(:dew_point)
+      expect(forecast[:attributes][:current_weather]).not_to have_key(:clouds)
+      expect(forecast[:attributes][:current_weather]).not_to have_key(:wind_speed)
+      expect(forecast[:attributes][:current_weather]).not_to have_key(:wind_deg)
+      expect(forecast[:attributes][:current_weather]).not_to have_key(:wind_deg)
+      expect(forecast[:attributes][:current_weather]).not_to have_key(:weather)
 
       expect(forecast[:attributes]).to have_key(:daily_weather)
       expect(forecast[:attributes][:daily_weather].count).to eq(5)
@@ -34,6 +41,18 @@ describe "forecast request" do
         expect((day[:min_temp] < day[:max_temp])).to eq(true)
         expect(day[:conditions]).to be_a String
         expect(day[:icon]).to be_a String
+        expect(day).not_to have_key(:moonrise)
+        expect(day).not_to have_key(:moonset)
+        expect(day).not_to have_key(:moon_phase)
+        expect(day).not_to have_key(:temp)
+        expect(day).not_to have_key(:feels_like)
+        expect(day).not_to have_key(:pressure)
+        expect(day).not_to have_key(:humidity)
+        expect(day).not_to have_key(:dew_point)
+        expect(day).not_to have_key(:wind_speed)
+        expect(day).not_to have_key(:wind_deg)
+        expect(day).not_to have_key(:wind_gust)
+        expect(day).not_to have_key(:weather)
       end
 
       expect(forecast[:attributes]).to have_key(:hourly_weather)
@@ -44,6 +63,17 @@ describe "forecast request" do
         expect(hour[:temperature]).to be_a(Float).or be_an(Integer)
         expect(hour[:conditions]).to be_a String
         expect(hour[:icon]).to be_a String
+        expect(hour).not_to have_key(:feels_like)
+        expect(hour).not_to have_key(:pressure)
+        expect(hour).not_to have_key(:humidity)
+        expect(hour).not_to have_key(:dew_point)
+        expect(hour).not_to have_key(:uvi)
+        expect(hour).not_to have_key(:clouds)
+        expect(hour).not_to have_key(:visibility)
+        expect(hour).not_to have_key(:wind_speed)
+        expect(hour).not_to have_key(:wind_deg)
+        expect(hour).not_to have_key(:wind_gust)
+        expect(hour).not_to have_key(:weather)
       end
     end
   end
