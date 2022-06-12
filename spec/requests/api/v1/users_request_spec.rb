@@ -28,7 +28,7 @@ describe "users request" do
     end
 
     it "sends back a 400 error for bad user params" do
-      user = User.new(email: "test@testing.com", password: "test123", password_confirmation: "test123")
+      user = User.create!(email: "test@testing.com", password: "test123", password_confirmation: "test123")
 
       json_payload = {
         email: "test@testing.com",
@@ -39,9 +39,10 @@ describe "users request" do
 
       post "/api/v1/users", headers: headers, params: json_payload.to_json, as: :json
 
-      expect(response).to have_http_status(201)
+      expect(response).to have_http_status(400)
 
       response_body = JSON.parse(response.body, symbolize_names: true)
+      binding.pry
 
       expect(response_body).to have_key(:error)
       expect(response_body[:error]).to be_a String
