@@ -14,12 +14,12 @@ describe "forecast request" do
       expect(forecast[:attributes][:current_weather][:datetime]).to be_a Time
       expect(forecast[:attributes][:current_weather][:sunrise]).to be_a Time
       expect(forecast[:attributes][:current_weather][:sunset]).to be_a Time
-      expect(forecast[:attributes][:current_weather][:temperature]).to eq(93.76)
-      expect(forecast[:attributes][:current_weather][:humidity]).to eq(18)
-      expect(forecast[:attributes][:current_weather][:uvi]).to eq(1.57)
-      expect(forecast[:attributes][:current_weather][:visibility]).to eq(10000)
-      expect(forecast[:attributes][:current_weather][:conditions]).to eq("broken clouds")
-      expect(forecast[:attributes][:current_weather][:icon]).to eq("04d")
+      expect(forecast[:attributes][:current_weather][:temperature]).to be_a Float
+      expect(forecast[:attributes][:current_weather][:humidity]).to be_an Integer
+      expect(forecast[:attributes][:current_weather][:uvi]).to be_a Float
+      expect(forecast[:attributes][:current_weather][:visibility]).to be_an Integer
+      expect(forecast[:attributes][:current_weather][:conditions]).to be_a String
+      expect(forecast[:attributes][:current_weather][:icon]).to be_a String
 
       expect(forecast[:attributes]).to have_key(:daily_weather)
       expect(forecast[:attributes][:daily_weather].count).to eq(5)
