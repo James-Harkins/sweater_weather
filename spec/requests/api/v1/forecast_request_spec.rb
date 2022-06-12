@@ -4,7 +4,7 @@ describe "forecast request" do
   describe "GET forecast for some location" do
     it "returns a forecast response including current, daily, and hourly weather data", :vcr do
       headers = {"CONTENT_TYPE" => "application/json"}
-      get "/api/v1/forecast", headers: headers, params: {location: "denver"}
+      get "/api/v1/forecast", headers: headers, params: {location: "denver,co"}
 
       response_body = JSON.parse(response.body, symbolize_names: true)
       forecast = response_body[:data]
