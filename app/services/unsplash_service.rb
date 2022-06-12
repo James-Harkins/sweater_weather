@@ -12,6 +12,5 @@ class UnsplashService
       c.params[:orientation] = "landscape"
     end
     results = JSON.parse(response.body, symbolize_names: true)[:results][0]
-    binding.pry
   end
 end
