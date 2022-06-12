@@ -909,49 +909,49 @@ describe Forecast do
       # indices 0 through 7
       denver_hourly_weather = [
         {
-          time: Time.at(denver_forecast_data[:hourly][0][:dt]).to_datetime,
+          time: "19:00",
           temperature: 90.68,
           conditions: "scattered clouds",
           icon: "03d"
         },
         {
-          time: Time.at(denver_forecast_data[:hourly][1][:dt]).to_datetime,
+          time: "20:00",
           temperature: 91.24,
           conditions: "scattered clouds",
           icon: "03d"
         },
         {
-          time: Time.at(denver_forecast_data[:hourly][2][:dt]).to_datetime,
+          time: "21:00",
           temperature: 89.33,
           conditions: "scattered clouds",
           icon: "03n"
         },
         {
-          time: Time.at(denver_forecast_data[:hourly][3][:dt]).to_datetime,
+          time: "22:00",
           temperature: 86.58,
           conditions: "scattered clouds",
           icon: "03n"
         },
         {
-          time: Time.at(denver_forecast_data[:hourly][4][:dt]).to_datetime,
+          time: "23:00",
           temperature: 83.12,
           conditions: "scattered clouds",
           icon: "03n"
         },
         {
-          time: Time.at(denver_forecast_data[:hourly][5][:dt]).to_datetime,
+          time: "00:00",
           temperature: 79.25,
           conditions: "scattered clouds",
           icon: "03n"
         },
         {
-          time: Time.at(denver_forecast_data[:hourly][6][:dt]).to_datetime,
+          time: "01:00",
           temperature: 75.42,
           conditions: "broken clouds",
           icon: "04n"
         },
         {
-          time: Time.at(denver_forecast_data[:hourly][7][:dt]).to_datetime,
+          time: "02:00",
           temperature: 73.53,
           conditions: "scattered clouds",
           icon: "03n"

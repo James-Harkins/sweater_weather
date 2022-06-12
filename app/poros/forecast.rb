@@ -40,7 +40,7 @@ class Forecast
     hours = attributes[:hourly][0..7]
     hours.map do |hour|
       {
-        time: Time.at(hour[:dt]).to_datetime,
+        time: Time.at(hour[:dt]).strftime("%H:%M"),
         temperature: hour[:temp],
         conditions: hour[:weather][0][:description],
         icon: hour[:weather][0][:icon]

@@ -11,9 +11,9 @@ describe "forecast request" do
       expect(forecast[:id]).to eq(nil)
       expect(forecast[:type]).to eq("forecast")
       expect(forecast[:attributes]).to have_key(:current_weather)
-      expect(forecast[:attributes][:current_weather][:datetime]).to be_a Time
-      expect(forecast[:attributes][:current_weather][:sunrise]).to be_a Time
-      expect(forecast[:attributes][:current_weather][:sunset]).to be_a Time
+      expect(forecast[:attributes][:current_weather][:datetime]).to be_a DateTime
+      expect(forecast[:attributes][:current_weather][:sunrise]).to be_a DateTime
+      expect(forecast[:attributes][:current_weather][:sunset]).to be_a DateTime
       expect(forecast[:attributes][:current_weather][:temperature]).to be_a Float
       expect(forecast[:attributes][:current_weather][:humidity]).to be_an Integer
       expect(forecast[:attributes][:current_weather][:uvi]).to be_a Float
@@ -25,9 +25,9 @@ describe "forecast request" do
       expect(forecast[:attributes][:daily_weather].count).to eq(5)
 
       forecast[:attributes][:daily_weather].each do |day|
-        expect(day[:date]).to be_a Date
-        expect(day[:sunrise]).to be_a Time
-        expect(day[:sunset]).to be_a Time
+        expect(day[:date]).to be_a DateTime
+        expect(day[:sunrise]).to be_a DateTime
+        expect(day[:sunset]).to be_a DateTime
         expect(day[:max_temp]).to be_a Float
         expect(day[:min_temp]).to be_a Float
         expect((day[:min_temp] < day[:max_temp])).to eq(true)
@@ -39,7 +39,7 @@ describe "forecast request" do
       expect(forecast[:attributes][:hourly_weather].count).to eq(8)
 
       forecast[:attributes][:hourly_weather].each do |hour|
-        expect(hour[:time]).to be_a Time
+        expect(hour[:time]).to be_a String
         expect(hour[:temperature]).to be_a Float
         expect(hour[:conditions]).to be_a String
         expect(hour[:icon]).to be_a String
