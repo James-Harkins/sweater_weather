@@ -4,9 +4,7 @@ describe BackgroundImageFacade do
   describe "class methods" do
     describe "#generate_background_image" do
       it "returns a BackgroundImage PORO for the return value of an UnsplashService.get_background_image_data call", :vcr do
-        denver_background_image_data = UnsplashService.get_background_image_data("denver,co")
-
-        denver_background_image = BackgroundImageFacade.generate_background_image(denver_background_image_data)
+        denver_background_image = BackgroundImageFacade.generate_background_image("denver,co")
 
         expect(denver_background_image).to be_a BackgroundImage
         expect(denver_background_image.id).to eq(nil)
