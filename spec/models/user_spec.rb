@@ -18,9 +18,16 @@ describe User, type: :model do
 
     it "should not have a password attribute and the password_digest attribute should be a hash" do
       user = User.create(email: "test@test.com", password: "password123", password_confirmation: "password123")
-      binding.pry
+
       expect(user).to_not have_attribute(:password)
       expect(user.password_digest).to_not eq("password123")
+    end
+
+    it "should have a unique api_key generated upon creation" do
+      user_1 = User.create!(email: "test1@test.com", password: "password123", password_confirmation: "password123")
+      user_2 = User.create!(email: "test2@test.com", password: "password123", password_confirmation: "password123")
+
+      expect(user_1.api_key).not_to eq(user_2.api_key)
     end
   end
 end
