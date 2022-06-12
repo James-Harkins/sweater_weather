@@ -3,8 +3,9 @@ require "rails_helper"
 describe MapquestService do
   describe "class methods" do
     describe "#get_location_data" do
-      it "returns a hash containing data for some location argument" do
+      it "returns a hash containing data for some location argument", :vcr do
         location_data = MapquestService.get_location_data("denver")
+
         expect(location_data).to be_a Hash
         expect(location_data).to have_key(:info)
         expect(location_data[:info]).to be_a Hash
