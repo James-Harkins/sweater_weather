@@ -18,6 +18,7 @@ describe User, type: :model do
 
     it "should not have a password attribute and the password_digest attribute should be a hash" do
       user = User.create(email: "test@test.com", password: "password123", password_confirmation: "password123")
+      binding.pry
       expect(user).to_not have_attribute(:password)
       expect(user.password_digest).to_not eq("password123")
     end
