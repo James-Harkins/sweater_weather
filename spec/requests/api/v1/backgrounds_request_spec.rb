@@ -20,7 +20,7 @@ describe "backgrounds request" do
       expect(background[:attributes][:image]).to have_key(:credit)
       expect(background[:attributes][:image][:credit]).to be_a Hash
       expect(background[:attributes][:image][:credit]).to have_key(:source)
-      expect(background[:attributes][:image][:credit][:source]).to eq("Upsplash")
+      expect(background[:attributes][:image][:credit][:source]).to eq("Unsplash")
       expect(background[:attributes][:image][:credit]).to have_key(:photographer_info)
       expect(background[:attributes][:image][:credit][:photographer_info]).to be_a Hash
       expect(background[:attributes][:image][:credit][:photographer_info]).to have_key(:name)
