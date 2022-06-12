@@ -6,6 +6,8 @@ describe "backgrounds request" do
       headers = {"CONTENT_TYPE" => "application/json"}
       get "/api/v1/backgrounds", headers: headers, params: {location: "denver,co"}
 
+      expect(response).to have_http_status(200)
+
       response_body = JSON.parse(response.body, symbolize_names: true)
       background = response_body[:data]
 
