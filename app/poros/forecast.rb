@@ -56,6 +56,11 @@ class Forecast
         temperature: "#{@hourly_weather[travel_time_in_hours - 1][:temperature]} F",
         conditions: @hourly_weather[travel_time_in_hours - 1][:conditions]
       }
+    else
+      {
+        temperature: "#{@daily_weather[travel_time_in_hours / 24][:max_temp]} F",
+        conditions: @daily_weather[travel_time_in_hours / 24][:conditions]
+      }
     end
   end
 end
