@@ -26,6 +26,12 @@ describe "sessions request" do
       expect(session_user[:attributes][:email]).to eq(json_payload[:email])
       expect(session_user[:attributes]).to have_key(:api_key)
       expect(session_user[:attributes][:api_key]).to be_a String
+
+      data_keys = [:id, :type, :attributes]
+      attributes_keys = [:email, :api_key]
+
+      expect(session_user.keys).to eq(data_keys)
+      expect(session_user[:attributes].keys).to eq(attributes_keys)
     end
 
     it "returns a 400 error if that user cannot be authenticated" do
