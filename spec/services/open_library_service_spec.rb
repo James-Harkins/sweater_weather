@@ -3,7 +3,7 @@ require "rails_helper"
 describe OpenLibraryService do
   describe "class methods" do
     describe "#get_books_by_location" do
-      it "returns data for all books in their database by search parameter location" do
+      it "returns data for all books in their database by search parameter location", :vcr do
         denver_books = OpenLibraryService.get_books_by_location("denver,co")
 
         expect(denver_books).to be_a Hash
