@@ -1,20 +1,17 @@
 class BackgroundImage
-  attr_reader :id, :image
+  attr_reader :image_url, :credit
   def initialize(attributes)
-    @id = nil
-    @image = generate_info_data(attributes)
+    @image_url = attributes[:urls][:full]
+    @credit = generate_credit_data(attributes)
   end
 
-  def generate_info_data(attributes)
+  def generate_credit_data(attributes)
     {
-      image_url: attributes[:urls][:full],
-      credit: {
-        source: "Unsplash",
-        photographer_info: {
-          name: attributes[:user][:name],
-          username: attributes[:user][:username],
-          link: attributes[:user][:links][:self]
-        }
+      source: "Unsplash",
+      photographer_info: {
+        name: attributes[:user][:name],
+        username: attributes[:user][:username],
+        link: attributes[:user][:links][:self]
       }
     }
   end

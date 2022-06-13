@@ -25,6 +25,12 @@ describe "users request" do
       expect(new_user[:attributes][:email]).to eq(json_payload[:email])
       expect(new_user[:attributes]).to have_key(:api_key)
       expect(new_user[:attributes][:api_key]).to be_a String
+
+      data_keys = [:id, :type, :attributes]
+      attributes_keys = [:email, :api_key]
+
+      expect(new_user.keys).to eq(data_keys)
+      expect(new_user[:attributes].keys).to eq(attributes_keys)
     end
 
     it "sends back a 400 error for bad user params" do
