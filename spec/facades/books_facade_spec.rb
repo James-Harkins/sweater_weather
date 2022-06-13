@@ -23,7 +23,7 @@ describe BooksFacade do
     end
 
     describe "#get_books_data_by_location" do
-      it "can cache OpenLibraryService calls with different location parameters" do
+      it "can cache OpenLibraryService calls with different location parameters", :vcr do
         location_1 = "denver,co"
         location_2 = "richmond,va"
 
