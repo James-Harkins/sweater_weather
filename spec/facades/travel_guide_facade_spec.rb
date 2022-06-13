@@ -11,7 +11,7 @@ describe TravelGuideFacade do
         }
 
         expect(travel_guide).to be_a TravelGuide
-        expect(travel_guide.travel_time).to eq(7551)
+        expect(travel_guide.travel_time).to eq(6300)
         expect(travel_guide.destination_coordinates).to eq(pueblo_coordinates)
       end
     end

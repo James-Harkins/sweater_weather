@@ -37,5 +37,27 @@ describe "road trip request" do
       expect(road_trip[:attributes][:weather_at_eta][:temperature]).to be_a String
       expect(road_trip[:attributes][:weather_at_eta][:conditions]).to be_a String
     end
+
+    it "still works when the travel time is greater than 8 hours", :vcr do
+      user = User.create!(email: "test@testing.com", password: "test123", password_confirmation: "test123")
+
+      json_payload = {
+        origin: "New York, NY",
+        destination: "Los Angeles, CA",
+        api_key: user.api_key
+      }
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      post "/api/v1/road_trip", headers: headers, params: json_payload.to_json, as: :json
+
+      expect(response).to have_http_status(201)
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+      road_trip = response_body[:data]
+
+      expect(road_trip[:attributes][:travel_time]).to eq("40 hour(s) and 16 minutes")
+      expect(road_trip[:attributes][:weather_at_eta][:temperature]).to be_a String
+      expect(road_trip[:attributes][:weather_at_eta][:conditions]).to be_a String
+    end
   end
 end

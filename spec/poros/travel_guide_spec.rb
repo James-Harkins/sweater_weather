@@ -291,7 +291,7 @@ describe TravelGuide do
         }
 
         expect(travel_guide).to be_a TravelGuide
-        expect(travel_guide.travel_time).to eq(7487)
+        expect(travel_guide.travel_time).to eq(6300)
         expect(travel_guide.destination_coordinates).to eq(pueblo_coordinates)
       end
     end
@@ -302,7 +302,7 @@ describe TravelGuide do
       it "returns the travel time formatted into hours and minutes" do
         directions_data = {
           route: {
-            realTime: 7487,
+            formattedTime: "01:45:23",
             locations: [
               {
 
@@ -316,7 +316,7 @@ describe TravelGuide do
 
         travel_guide = TravelGuide.new(directions_data)
 
-        expect(travel_guide.format_travel_time).to eq("2 hours and 4 minutes")
+        expect(travel_guide.format_travel_time).to eq("1 hour(s) and 45 minutes")
       end
     end
   end
