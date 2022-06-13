@@ -30,7 +30,7 @@ describe OpenweatherService do
           expect(day[:sunrise]).to be_an Integer
           expect(day[:sunset]).to be_an Integer
           expect(day[:temp]).to be_a Hash
-          expect(day[:temp][:day]).to be_a Float
+          expect(day[:temp][:day]).to be_a(Float).or be_an(Integer)
           expect(day[:weather][0][:description]).to be_a String
           expect(day[:weather][0][:icon]).to be_a String
         end

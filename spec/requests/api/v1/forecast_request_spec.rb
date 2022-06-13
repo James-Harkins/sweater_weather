@@ -19,7 +19,7 @@ describe "forecast request" do
       expect(forecast[:attributes][:current_weather][:sunset]).to be_a String
       expect(forecast[:attributes][:current_weather][:temperature]).to be_a(Float).or be_an(Integer)
       expect(forecast[:attributes][:current_weather][:humidity]).to be_an Integer
-      expect(forecast[:attributes][:current_weather][:uvi]).to be_an Integer
+      expect(forecast[:attributes][:current_weather][:uvi]).to be_an(Integer).or be_a(Float)
       expect(forecast[:attributes][:current_weather][:visibility]).to be_an Integer
       expect(forecast[:attributes][:current_weather][:conditions]).to be_a String
       expect(forecast[:attributes][:current_weather][:icon]).to be_a String
