@@ -6,7 +6,6 @@ describe "book-search request" do
       get "/api/v1/book-search?location=denver,co&quantity=5"
 
       expect(response).to have_http_status(200)
-      binding.pry
 
       response_body = JSON.parse(response.body, symbolize_names: true)
       books = response_body[:data]
@@ -31,6 +30,16 @@ describe "book-search request" do
           expect(publisher).to be_a String
         end
       end
+    end
+
+    it "returns an error message if the user passes in a quantity less than or equal to zero" do
+      get "/api/v1/book-search?location=denver,co&quantity=-5"
+
+      expect(response).to have_http_status(400)
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response_body[:error]).to eq("Quantity must be greater than zero.")
     end
   end
 end
