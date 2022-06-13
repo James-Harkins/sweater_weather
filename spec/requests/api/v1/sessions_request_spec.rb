@@ -13,7 +13,7 @@ describe "sessions request" do
 
       post "/api/v1/sessions", headers: headers, params: json_payload.to_json, as: :json
 
-      expect(response).to have_http_status(201)
+      expect(response).to have_http_status(200)
 
       response_body = JSON.parse(response.body, symbolize_names: true)
       session_user = response_body[:data]
