@@ -11,7 +11,6 @@ class TravelGuide
   end
 
   def format_travel_time
-    binding.pry
     "#{@travel_time / (60 * 60)} hours and #{(@travel_time / 60) % 60} minutes"
   end
 end

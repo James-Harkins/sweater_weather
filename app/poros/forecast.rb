@@ -48,4 +48,14 @@ class Forecast
       }
     end
   end
+
+  def weather_at_eta(travel_time)
+    travel_time_in_hours = (travel_time / 3600)
+    if (travel_time_in_hours) < 8
+      {
+        temperature: "#{@hourly_weather[travel_time_in_hours - 1][:temperature]} F",
+        conditions: @hourly_weather[travel_time_in_hours - 1][:conditions]
+      }
+    end
+  end
 end
