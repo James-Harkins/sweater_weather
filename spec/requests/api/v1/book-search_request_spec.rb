@@ -32,6 +32,20 @@ describe "book-search request" do
       end
     end
 
+    it "can return unique data for two separate arguments using memoization in the BooksFacade", :vcr do
+      get "/api/v1/book-search?location=denver,co&quantity=5"
+
+      response_body_1 = JSON.parse(response.body, symbolize_names: true)
+      denver_books = response_body_1[:data]
+
+      get "/api/v1/book-search?location=richmond,va&quantity=5"
+
+      response_body_2 = JSON.parse(response.body, symbolize_names: true)
+      richmond_books = response_body_2[:data]
+
+      expect(richmond_books).not_to eq(denver_books)
+    end
+
     it "returns an error message if the user passes in a quantity less than or equal to zero" do
       get "/api/v1/book-search?location=denver,co&quantity=-5"
 
