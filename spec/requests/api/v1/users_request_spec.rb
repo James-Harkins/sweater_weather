@@ -42,7 +42,6 @@ describe "users request" do
       expect(response).to have_http_status(400)
 
       response_body = JSON.parse(response.body, symbolize_names: true)
-      binding.pry
 
       expect(response_body).to have_key(:error)
       expect(response_body[:error]).to be_a String
