@@ -9,7 +9,7 @@ describe BackgroundImageFacade do
         expect(denver_background_image).to be_a BackgroundImage
         expect(denver_background_image.id).to eq(nil)
         expect(denver_background_image.image).to be_a Hash
-        expect(denver_background_image.image[:image_url]).to eq("https://images.unsplash.com/photo-1602967689755-6bc05c2d3c5b?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzY1Mzh8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMkNjbyUyQ3NreWxpbmV8ZW58MHwwfHx8MTY1NTA2MTI1Mw&ixlib=rb-1.2.1&q=80")
+        expect(denver_background_image.image[:image_url]).to eq("https://images.unsplash.com/photo-1602967689755-6bc05c2d3c5b?crop=entropy&cs=tinysrgb&fm=jpg&ixid=MnwzMzY1Mzh8MHwxfHNlYXJjaHwxfHxkZW52ZXIlMkNjbyUyQ3NreWxpbmV8ZW58MHwwfHx8MTY1NTE0Nzc2NA&ixlib=rb-1.2.1&q=80")
         expect(denver_background_image.image[:credit]).to be_a Hash
         expect(denver_background_image.image[:credit][:source]).to eq("Unsplash")
         expect(denver_background_image.image[:credit][:photographer_info]).to be_a Hash
