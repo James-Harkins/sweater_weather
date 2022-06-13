@@ -1,5 +1,5 @@
 class BooksAndForecastSerializer
-  def self.serialize_books_and_forecast_by_location(location, quantity)
+  def self.serialize_by_location(location, quantity)
     coordinates = MapquestFacade.get_latitude_and_longitude(location)
     forecast = ForecastFacade.generate_forecast(coordinates)
     {
