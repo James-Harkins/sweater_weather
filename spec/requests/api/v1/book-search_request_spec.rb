@@ -2,10 +2,11 @@ require "rails_helper"
 
 describe "book-search request" do
   describe "GET books for some location and quantity" do
-    it "returns a forecast for and collection of some quantity of books about some location" do
+    it "returns a forecast for and collection of some quantity of books about some location", :vcr do
       get "/api/v1/book-search?location=denver,co&quantity=5"
 
       expect(response).to have_http_status(200)
+      binding.pry
 
       response_body = JSON.parse(response.body, symbolize_names: true)
       books = response_body[:data]
