@@ -316,7 +316,7 @@ describe TravelGuide do
 
         travel_guide = TravelGuide.new(directions_data)
 
-        expect(travel_guide.format_travel_time).to eq("2 hours and 5 minutes")
+        expect(travel_guide.format_travel_time).to eq("2 hours and 4 minutes")
       end
     end
   end
