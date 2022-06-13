@@ -21,5 +21,17 @@ describe BooksFacade do
         expect(results_total).to eq(42475)
       end
     end
+
+    describe "#get_books_data_by_location" do
+      it "can cache OpenLibraryService calls with different location parameters" do
+        location_1 = "denver,co"
+        location_2 = "richmond,va"
+
+        denver_books_data = BooksFacade.get_books_data_by_location(location_1)
+        richmond_books_data = BooksFacade.get_books_data_by_location(location_2)
+
+        expect(richmond_books_data).not_to eq(denver_books_data)
+      end
+    end
   end
 end
