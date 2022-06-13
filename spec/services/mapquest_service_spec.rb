@@ -17,5 +17,15 @@ describe MapquestService do
         expect(location_data[:results][0][:locations][0][:latLng][:lng]).to eq(-104.984853)
       end
     end
+
+    describe "#get_directions" do
+      it "returns a hash containing data for directions between a starting location and ending location" do
+        directions = MapquestService.get_directions("Denver, CO", "Pueblo, CO")
+
+        expect(directions).to be_a Hash
+        expect(directions[:route]).to be_a Hash
+        expect(directions[:realTime]).to eq(7050)
+      end
+    end
   end
 end
