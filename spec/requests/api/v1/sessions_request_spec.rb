@@ -45,5 +45,21 @@ describe "sessions request" do
 
       expect(response_body[:error]).to eq("Invalid credentials.")
     end
+
+    it "returns a 400 error with the same generic message if there is no user in the database with that email address" do
+      json_payload = {
+        email: "test@testing.com",
+        password: "test123"
+      }
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      post "/api/v1/sessions", headers: headers, params: json_payload.to_json, as: :json
+
+      expect(response).to have_http_status(400)
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response_body[:error]).to eq("Invalid credentials.")
+    end
   end
 end
