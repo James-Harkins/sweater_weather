@@ -13,5 +13,13 @@ describe BooksFacade do
         expect(five_denver_books[0].publisher).to eq(["Universal Map Enterprises"])
       end
     end
+
+    describe "#get_total_search_results_by_location" do
+      it "returns the total number of OpenLibraryService.get_books_by_location search results", :vcr do
+        results_total = BooksFacade.get_total_search_results_by_location("denver,co")
+
+        expect(results_total).to eq(42475)
+      end
+    end
   end
 end
