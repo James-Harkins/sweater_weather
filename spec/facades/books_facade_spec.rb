@@ -3,7 +3,7 @@ require "rails_helper"
 describe BooksFacade do
   describe "class methods" do
     describe "#get_quantity_of_books_by_location" do
-      it "returns a quantity of Book POROs by some location search param" do
+      it "returns a quantity of Book POROs by some location search param", :vcr do
         five_denver_books = BooksFacade.get_quantity_of_books_by_location("denver,co", 5)
 
         expect(five_denver_books).to be_all Book
