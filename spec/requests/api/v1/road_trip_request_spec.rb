@@ -2,7 +2,7 @@ require "rails_helper"
 
 describe "road trip request" do
   describe "POST /api/v1/road_trip" do
-    it "returns travel details between two locations, with weather data for the destination at the time of arrival" do
+    it "returns travel details between two locations, with weather data for the destination at the time of arrival", :vcr do
       user = User.create!(email: "test@testing.com", password: "test123", password_confirmation: "test123")
 
       json_payload = {

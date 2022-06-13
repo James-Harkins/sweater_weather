@@ -19,12 +19,12 @@ describe MapquestService do
     end
 
     describe "#get_directions" do
-      it "returns a hash containing data for directions between a starting location and ending location" do
+      it "returns a hash containing data for directions between a starting location and ending location", :vcr do
         directions = MapquestService.get_directions("Denver, CO", "Pueblo, CO")
 
         expect(directions).to be_a Hash
         expect(directions[:route]).to be_a Hash
-        expect(directions[:realTime]).to eq(7050)
+        expect(directions[:route][:realTime]).to eq(7487)
       end
     end
   end
