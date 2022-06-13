@@ -6,6 +6,8 @@ describe "forecast request" do
       headers = {"CONTENT_TYPE" => "application/json"}
       get "/api/v1/forecast", headers: headers, params: {location: "denver,co"}
 
+      expect(response).to have_http_status(200)
+
       response_body = JSON.parse(response.body, symbolize_names: true)
       forecast = response_body[:data]
 
