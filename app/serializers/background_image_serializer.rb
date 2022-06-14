@@ -1,5 +1,5 @@
 class BackgroundImageSerializer
-  def self.serialize_image(image, location)
+  def self.serialize(image, location)
     {
       data: {
         type: "image",
