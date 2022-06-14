@@ -2,7 +2,7 @@
 
 ## Overview
 
-Sweater Weather is a 4-day project assigned during Module 3 of Turing's Back-End Engineering program. Using Ruby on Rails, the API app exposes various endpoints for a hypothetical front-end application. 
+Sweater Weather is a 4-day project assigned during Module 3 of Turing's Back-End Engineering program. Using Ruby on Rails, the API app exposes various endpoints for a hypothetical front-end application, which will allow users to see the current weather as well as the forecasted weather at the destination.
 
 ## Learning Goals
 
