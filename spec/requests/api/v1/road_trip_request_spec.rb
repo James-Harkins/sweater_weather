@@ -77,9 +77,8 @@ describe "road trip request" do
       response_body = JSON.parse(response.body, symbolize_names: true)
       road_trip = response_body[:data]
 
-      expect(road_trip[:attributes][:travel_time]).to eq("Impossible")
-      expect(road_trip[:attributes][:weather_at_eta][:temperature]).to eq("")
-      expect(road_trip[:attributes][:weather_at_eta][:conditions]).to eq("")
+      expect(road_trip[:attributes][:travel_time]).to eq("impossible")
+      expect(road_trip[:attributes][:weather_at_eta]).to eq({})
     end
   end
 end
