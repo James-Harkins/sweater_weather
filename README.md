@@ -14,19 +14,11 @@ Sweater Weather is a 4-day project assigned during Module 3 of Turing's Back-End
 
 ### Forecast
 
-<<<<<<< HEAD
-`GET /api/v1/forecast`
-
-This endpoint returns a weather forecast for some location, including the current weather, daily weather for the next five days, and hourly weather for the next eight hours. It requires one query parameter, `location`, which should be a String containing a city and state separated by a comma, e.g., "denver,co".
-
-Example response:
-=======
 `GET /api/v1/forecast` 
 
 This endpoint returns a weather forecast for some location, including the current weather, daily weather for the next five days, and hourly weather for the next eight hours. It requires one query parameter, `location`, which should be a String containing a city and state separated by a comma, e.g., "denver,co".
 
 Example response: 
->>>>>>> 9bbe698ea91215e86ef4cde67034118c48d5a39f
 
 ```ruby
 {
@@ -150,19 +142,11 @@ Example response:
 
 ### Backgrounds
 
-<<<<<<< HEAD
 `GET /api/v1/backgrounds`
 
 This endpoint returns data for some background image of the desired location. It requires one query parameter, `location`, which should be a String containing a city and state separated by a comma, e.g., "denver,co".
 
-Example response:
-=======
-`GET /api/v1/backgrounds` 
-
-This endpoint returns data for some background image of the desired location. It requires one query parameter, `location`, which should be a String containing a city and state separated by a comma, e.g., "denver,co". 
-
 Example response: 
->>>>>>> 9bbe698ea91215e86ef4cde67034118c48d5a39f
 
 ```ruby
 {
@@ -189,15 +173,10 @@ Example response:
 
 ### Users
 
-<<<<<<< HEAD
 `POST /api/v1/users`
 
 This endpoint creates a new `User` entry in the database when successful parameters are passed through, and returns the `email` attribute of that new `User` and a newly-generated `api_key`. It requires three parameters, which should be passed in as a raw json payload in the body of the request:
-=======
-`POST /api/v1/users` 
 
-This endpoint creates a new `User` entry in the database when successful parameters are passed through, and returns the `email` attribute of that new `User` and a newly-generated `api_key`. It requires three parameters, which should be passed in as a raw json payload in the body of the request: 
->>>>>>> 9bbe698ea91215e86ef4cde67034118c48d5a39f
 ```ruby
 {
   "email": "whatever@example.com",
@@ -206,11 +185,7 @@ This endpoint creates a new `User` entry in the database when successful paramet
 }
 ```
 
-<<<<<<< HEAD
 Example response:
-=======
-Example response: 
->>>>>>> 9bbe698ea91215e86ef4cde67034118c48d5a39f
 
 ```ruby
 {
@@ -227,15 +202,10 @@ Example response:
 
 ### Sessions
 
-<<<<<<< HEAD
 `POST /api/v1/sessions`
 
 This endpoint locates some `User` entry in the database when successfully authenticated, and returns the `email` attribute of that `User` their `api_key`. It requires two parameters, which should be passed in as a raw json payload in the body of the request:
-=======
-`POST /api/v1/sessions` 
 
-This endpoint locates some `User` entry in the database when successfully authenticated, and returns the `email` attribute of that `User` their `api_key`. It requires two parameters, which should be passed in as a raw json payload in the body of the request: 
->>>>>>> 9bbe698ea91215e86ef4cde67034118c48d5a39f
 ```ruby
 {
   "email": "whatever@example.com",
@@ -243,11 +213,7 @@ This endpoint locates some `User` entry in the database when successfully authen
 }
 ```
 
-<<<<<<< HEAD
-Example response:
-=======
 Example response: 
->>>>>>> 9bbe698ea91215e86ef4cde67034118c48d5a39f
 
 ```ruby
 {
@@ -264,15 +230,10 @@ Example response:
 
 ### Road Trip
 
-<<<<<<< HEAD
 `POST /api/v1/road_trip`
 
 This endpoint returns data for a Road Trip from some origin to some destination, including the travel time and the weather at destination. It requires three parameters, which should be passed in as a raw json payload in the body of the request:
-=======
-`POST /api/v1/road_trip` 
 
-This endpoint returns data for a Road Trip from some origin to some destination, including the travel time and the weather at destination. It requires three parameters, which should be passed in as a raw json payload in the body of the request: 
->>>>>>> 9bbe698ea91215e86ef4cde67034118c48d5a39f
 ```ruby
 {
   "origin": "Denver, CO",
@@ -281,11 +242,7 @@ This endpoint returns data for a Road Trip from some origin to some destination,
 }
 ```
 
-<<<<<<< HEAD
-Example response:
-=======
 Example response: 
->>>>>>> 9bbe698ea91215e86ef4cde67034118c48d5a39f
 
 ```ruby
 {
