@@ -3,6 +3,8 @@ class Api::V1::RoadTripController < ApplicationController
     request_params = JSON.parse(params["_json"], symbolize_names: true)
     if User.find_by(api_key: request_params[:api_key])
       render json: RoadTripSerializer.serialize(request_params[:origin], request_params[:destination]), status: :created
+    else
+      render json: {error: "unauthorized"}, status: 401
     end
   end
 end

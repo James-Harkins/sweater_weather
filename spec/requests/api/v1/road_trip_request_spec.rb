@@ -96,5 +96,22 @@ describe "road trip request" do
 
       expect(response_body[:error]).to eq("unauthorized")
     end
+
+    it "returns a 401 error if a bad api key is given" do
+      json_payload = {
+        origin: "Denver, CO",
+        destination: "London, UK",
+        api_key: "not_an_api_key"
+      }
+      headers = {"CONTENT_TYPE" => "application/json"}
+
+      post "/api/v1/road_trip", headers: headers, params: json_payload.to_json, as: :json
+
+      expect(response).to have_http_status(401)
+
+      response_body = JSON.parse(response.body, symbolize_names: true)
+
+      expect(response_body[:error]).to eq("unauthorized")
+    end
   end
 end
