@@ -6,9 +6,9 @@ Sweater Weather is a 4-day project assigned during Module 3 of Turing's Back-End
 
 ## Learning Goals
 
--Expose an API for CRUD functionality for Users in the database, which includes an authentication token
--Expose an API that aggregates data from multiple external API endpoints into single endpoints
--Research, select, and consume an API based on one's needs as a developer
+* Expose an API for CRUD functionality for Users in the database, which includes an authentication token
+* Expose an API that aggregates data from multiple external API endpoints into single endpoints
+* Research, select, and consume an API based on one's needs as a developer
 
 ## Endpoints
 
