@@ -24,7 +24,7 @@ describe MapquestService do
 
         expect(directions).to be_a Hash
         expect(directions[:route]).to be_a Hash
-        expect(directions[:route][:realTime]).to eq(7487)
+        expect(directions[:route][:realTime]).to eq(6595)
       end
     end
   end
