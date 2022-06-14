@@ -12,7 +12,7 @@ describe "road trip request" do
       }
       headers = {"CONTENT_TYPE" => "application/json"}
 
-      post "/api/v1/road_trip", headers: headers, params: json_payload.to_json, as: :json
+      post "/api/v1/road_trip", headers: headers, params: json_payload.to_json
 
       expect(response).to have_http_status(201)
 
@@ -48,7 +48,7 @@ describe "road trip request" do
       }
       headers = {"CONTENT_TYPE" => "application/json"}
 
-      post "/api/v1/road_trip", headers: headers, params: json_payload.to_json, as: :json
+      post "/api/v1/road_trip", headers: headers, params: json_payload.to_json
 
       expect(response).to have_http_status(201)
 
@@ -70,7 +70,7 @@ describe "road trip request" do
       }
       headers = {"CONTENT_TYPE" => "application/json"}
 
-      post "/api/v1/road_trip", headers: headers, params: json_payload.to_json, as: :json
+      post "/api/v1/road_trip", headers: headers, params: json_payload.to_json
 
       expect(response).to have_http_status(201)
 
@@ -88,7 +88,7 @@ describe "road trip request" do
       }
       headers = {"CONTENT_TYPE" => "application/json"}
 
-      post "/api/v1/road_trip", headers: headers, params: json_payload.to_json, as: :json
+      post "/api/v1/road_trip", headers: headers, params: json_payload.to_json
 
       expect(response).to have_http_status(401)
 
@@ -105,7 +105,7 @@ describe "road trip request" do
       }
       headers = {"CONTENT_TYPE" => "application/json"}
 
-      post "/api/v1/road_trip", headers: headers, params: json_payload.to_json, as: :json
+      post "/api/v1/road_trip", headers: headers, params: json_payload.to_json
 
       expect(response).to have_http_status(401)
 

@@ -11,7 +11,7 @@ describe "sessions request" do
       }
       headers = {"CONTENT_TYPE" => "application/json"}
 
-      post "/api/v1/sessions", headers: headers, params: json_payload.to_json, as: :json
+      post "/api/v1/sessions", headers: headers, params: json_payload.to_json
 
       expect(response).to have_http_status(200)
 
@@ -43,7 +43,7 @@ describe "sessions request" do
       }
       headers = {"CONTENT_TYPE" => "application/json"}
 
-      post "/api/v1/sessions", headers: headers, params: json_payload.to_json, as: :json
+      post "/api/v1/sessions", headers: headers, params: json_payload.to_json
 
       expect(response).to have_http_status(400)
 
@@ -59,7 +59,7 @@ describe "sessions request" do
       }
       headers = {"CONTENT_TYPE" => "application/json"}
 
-      post "/api/v1/sessions", headers: headers, params: json_payload.to_json, as: :json
+      post "/api/v1/sessions", headers: headers, params: json_payload.to_json
 
       expect(response).to have_http_status(400)
 

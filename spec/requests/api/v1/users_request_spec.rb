@@ -10,7 +10,7 @@ describe "users request" do
       }
       headers = {"CONTENT_TYPE" => "application/json"}
 
-      post "/api/v1/users", headers: headers, params: json_payload.to_json, as: :json
+      post "/api/v1/users", headers: headers, params: json_payload.to_json
 
       expect(response).to have_http_status(201)
 
@@ -43,7 +43,7 @@ describe "users request" do
       }
       headers = {"CONTENT_TYPE" => "application/json"}
 
-      post "/api/v1/users", headers: headers, params: json_payload.to_json, as: :json
+      post "/api/v1/users", headers: headers, params: json_payload.to_json
 
       expect(response).to have_http_status(400)
 
