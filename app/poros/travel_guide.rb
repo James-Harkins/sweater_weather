@@ -9,11 +9,7 @@ class TravelGuide
     if attributes[:route][:formattedTime]
       time = attributes[:route][:formattedTime]
       split_time = time.split(":").map { |dimension| dimension.to_i }[0..1]
-      split_time_in_minutes = []
-      split_time.each_with_index do |dimension, index|
-        split_time_in_minutes << (index < 1 ? (dimension * 60) : dimension)
-      end
-      split_time_in_minutes.sum * 60
+      [(split_time[0] * 60), split_time[1]].sum * 60
     end
   end
 
